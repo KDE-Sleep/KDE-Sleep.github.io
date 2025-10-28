@@ -1,48 +1,173 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="utf-8" />
-  <title>KDE-Sleep | University of Tsukuba</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="KDE-Sleep (University of Tsukuba): Sleep EEG, AI, and medical applications." />
-  <meta property="og:title" content="KDE-Sleep | University of Tsukuba" />
-  <meta property="og:description" content="Sleep EEG, AI, and medical applications." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/assets/ogp.png" />
+  <title>KDE-Sleep | 筑波大学KDEグループ 睡眠チーム</title>
+  <meta name="description" content="筑波大学KDEグループ 睡眠チーム。睡眠脳波解析・AI・医療応用。研究紹介・参加方法・公開リポジトリ。" />
   <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="KDE-Sleep | University of Tsukuba" />
+  <meta property="og:description" content="Sleep EEG • AI • Medical Applications (KDE-Sleep)." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://github.com/user-attachments/assets/36895aa5-13d6-4924-afaf-3c72ed6d370a" />
+  <link rel="canonical" href="https://kde-sleep.github.io/">
   <style>
     :root { --fg:#0f172a; --muted:#475569; --bg:#ffffff; --ring:#e2e8f0; --accent:#0ea5e9; }
-    *{box-sizing:border-box} body{margin:0;font-family:system-ui,Segoe UI,Roboto,sans-serif;color:var(--fg);background:var(--bg)}
-    .wrap{max-width:880px;margin:0 auto;padding:48px 20px}
-    .card{border:1px solid var(--ring);border-radius:16px;padding:24px;margin-top:24px}
-    a{color:var(--accent);text-decoration:none}
-    .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-    .logo{width:120px;height:auto;border-radius:12px}
-    .muted{color:var(--muted)}
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color:var(--fg); background:var(--bg); }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 48px 20px; }
+    .top { display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
+    .logo { width:88px; height:auto; border-radius:12px; }
+    h1 { margin: 0.2rem 0; }
+    .muted { color: var(--muted); }
+    .card { border:1px solid var(--ring); border-radius:16px; padding:20px; margin-top:20px; }
+    a { color: var(--accent); text-decoration: none; }
+    .row { display:grid; grid-template-columns: 1fr; gap:12px; }
+    .lang-toggle { margin-left:auto; display:flex; gap:8px; }
+    .btn { border:1px solid var(--ring); background:#fff; padding:8px 12px; border-radius:12px; cursor:pointer; }
+    .btn[aria-pressed="true"] { outline:2px solid var(--accent); }
+    .sr-only { position:absolute; left:-9999px; }
+    /* language visibility */
+    [data-lang] { display:none; }
+    [data-lang][data-active="true"] { display:block; }
+    footer { margin-top:28px; font-size:0.9rem; color:var(--muted); }
+    @media (min-width: 720px) {
+      .row { grid-template-columns: 1fr 1fr; }
+    }
   </style>
 </head>
 <body>
   <main class="wrap">
-    <img class="logo" alt="KDE-Sleep-Logo"
-      src="https://github.com/user-attachments/assets/36895aa5-13d6-4924-afaf-3c72ed6d370a" />
-    <h1>KDE-Sleep (University of Tsukuba)</h1>
-    <p class="muted">Sleep EEG • AI • Medical Applications</p>
-
-    <div class="grid">
-      <div class="card">
-        <h2>日本語 / Japanese</h2>
-        <p><a href="/ja/">研究紹介ページへ</a></p>
+    <header class="top">
+      <img class="logo" alt="KDE-Sleep-Logo"
+           src="https://github.com/user-attachments/assets/36895aa5-13d6-4924-afaf-3c72ed6d370a" />
+      <div>
+        <h1>KDE-Sleep (University of Tsukuba)</h1>
+        <p class="muted">Sleep EEG • AI • Medical Applications</p>
       </div>
-      <div class="card">
-        <h2>English</h2>
-        <p><a href="/en/">Go to the English page</a></p>
+      <div class="lang-toggle" role="group" aria-label="言語切替 / Language">
+        <button id="btn-ja" class="btn" aria-pressed="true" data-setlang="ja">日本語</button>
+        <button id="btn-en" class="btn" aria-pressed="false" data-setlang="en">English</button>
       </div>
-    </div>
+    </header>
 
-    <div class="card">
-      <h3>GitHub Organization</h3>
-      <p><a href="https://github.com/KDE-Sleep">github.com/KDE-Sleep</a></p>
-    </div>
+    <!-- 日本語 -->
+    <section id="ja" data-lang="ja" data-active="true" lang="ja">
+      <div class="card">
+        <p class="muted">2025/Sep./7　文責：<a href="https://github.com/kdesleep-code">kdesleep-code</a></p>
+        <p><strong>研究室配属希望の方は</strong> <a href="https://github.com/KDE-Sleep/Lab-Introduction">こちら</a></p>
+        <p>KDEのWebページは <a href="https://www.kde.cs.tsukuba.ac.jp/ja/index.php">こちら</a></p>
+      </div>
+
+      <div class="card">
+        <p>この GitHub Organization は、筑波大学KDEグループ「睡眠チーム」による研究活動の一部として運営されています。主に
+          <strong>睡眠脳波解析・AI・医療応用</strong> に関するコードやドキュメントを管理しています。</p>
+        <p>🔒 実際の研究用リポジトリは <strong>Private</strong> 運用です。新しく参加する学生・共同研究者の方は、以下の手順でアクセスしてください。</p>
+      </div>
+
+      <div class="row">
+        <div class="card">
+          <h2>🚪 KDE-Sleep への参加方法</h2>
+          <ol>
+            <li><strong>GitHub アカウント作成</strong> — <a href="https://github.com/join">https://github.com/join</a></li>
+            <li><strong>GitHub Education 登録</strong>（学生/教員特典） — <a href="https://education.github.com/">education.github.com</a></li>
+            <li><strong>Org 参加申請</strong> — GitHubユーザ名を指導教員へ。招待リンクの承認。</li>
+          </ol>
+        </div>
+        <div class="card">
+          <h2>📂 公開リポジトリ</h2>
+          <ul>
+            <li><a href="https://github.com/KDE-Sleep/onboarding-guide">onboarding-guide</a> — 新人向けの詳細手順・Q&A</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>GitHub Organization</h3>
+        <p><a href="https://github.com/KDE-Sleep">github.com/KDE-Sleep</a></p>
+      </div>
+    </section>
+
+    <!-- English -->
+    <section id="en" data-lang="en" lang="en">
+      <div class="card">
+        <p><strong>For those interested in joining the lab,</strong> <a href="https://github.com/KDE-Sleep/Lab-Introduction">click here</a></p>
+        <p>KDE Webpage, <a href="https://www.kde.cs.tsukuba.ac.jp/ja/index.php">click here</a></p>
+      </div>
+
+      <div class="card">
+        <p>This GitHub Organization is operated by the <strong>KDE Group, University of Tsukuba (Sleep Team)</strong>.
+           We mainly manage code and documentation related to <strong>sleep EEG analysis, AI, and medical applications</strong>.</p>
+        <p>🔒 Research repositories are <strong>Private</strong>. New students and collaborators should follow the steps below to gain access.</p>
+      </div>
+
+      <div class="row">
+        <div class="card">
+          <h2>🚪 How to Join KDE-Sleep</h2>
+          <ol>
+            <li><strong>Create a GitHub Account</strong> — <a href="https://github.com/join">github.com/join</a></li>
+            <li><strong>Apply for GitHub Education</strong> — <a href="https://education.github.com/">education.github.com</a></li>
+            <li><strong>Request to Join the Org</strong> — Tell your supervisor your GitHub username and accept the invitation link.</li>
+          </ol>
+        </div>
+        <div class="card">
+          <h2>📂 Public Repository</h2>
+          <ul>
+            <li><a href="https://github.com/KDE-Sleep/onboarding-guide">onboarding-guide</a> — Detailed instructions and FAQs for newcomers</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>GitHub Organization</h3>
+        <p><a href="https://github.com/KDE-Sleep">github.com/KDE-Sleep</a></p>
+      </div>
+    </section>
+
+    <footer>
+      <small>© KDE-Sleep, University of Tsukuba</small>
+    </footer>
   </main>
+
+  <noscript>
+    <p class="sr-only">JavaScriptが無効のため日本語で表示しています。/ English view requires JavaScript.</p>
+  </noscript>
+
+  <script>
+    (function () {
+      const qs = new URLSearchParams(window.location.search);
+      const langParam = qs.get('lang');
+      const saved = localStorage.getItem('kde_sleep_lang');
+      let lang = (langParam === 'en' || langParam === 'ja') ? langParam : (saved || 'ja');
+
+      const $ja = document.getElementById('ja');
+      const $en = document.getElementById('en');
+      const $btnJa = document.getElementById('btn-ja');
+      const $btnEn = document.getElementById('btn-en');
+
+      function apply(l) {
+        lang = l;
+        localStorage.setItem('kde_sleep_lang', l);
+        document.documentElement.lang = (l === 'en' ? 'en' : 'ja');
+        document.title = (l === 'en')
+          ? 'KDE-Sleep | University of Tsukuba'
+          : 'KDE-Sleep | 筑波大学KDEグループ 睡眠チーム';
+
+        $ja.dataset.active = (l === 'ja');
+        $en.dataset.active = (l === 'en');
+        $btnJa.setAttribute('aria-pressed', l === 'ja');
+        $btnEn.setAttribute('aria-pressed', l === 'en');
+
+        // クエリパラメータを現在の選択に合わせて更新（UX目的、SEOには依存しない）
+        const url = new URL(window.location);
+        url.searchParams.set('lang', l);
+        history.replaceState(null, '', url);
+      }
+
+      $btnJa.addEventListener('click', () => apply('ja'));
+      $btnEn.addEventListener('click', () => apply('en'));
+      apply(lang);
+    })();
+  </script>
 </body>
 </html>
